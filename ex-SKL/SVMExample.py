@@ -10,10 +10,10 @@ iris = datasets.load_iris()
 
 # Example 
 X = iris.data[:, [2, 3]]
-#print('X = ', X)
+# print('X = ', X)
 # Class Label 
 y = iris.target
-#print('y = ', y)
+# print('y = ', y)
 
 #from sklearn.cross_validation import train_test_split
 from sklearn.model_selection import train_test_split
@@ -22,14 +22,17 @@ from sklearn.preprocessing import StandardScaler
 # Split data 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=None )
 
-print('X_train = ', X_train)
+# print('X_train = ', X_train)
+# print('X_test = ', X_test)
+# print('y_train = ', y_train)
+# print('y_test = ', y_test)
 # Standarize Data
 sc = StandardScaler()
 sc.fit(X_train)
 X_train_std = sc.transform(X_train)
-print('X_train_std = ', X_train_std)
+# print('X_train_std = ', X_train_std)
 X_test_std = sc.transform(X_test)
-
+# print('X_test_std = ', X_test_std)
 
 from sklearn.svm import SVC
 # Linear SVM 
@@ -60,7 +63,7 @@ print('Accuracy for Test Data: %.2f' % accuracy_test)
 # Classification Result Display 
 import matplotlib.pyplot as plt
 from mlxtend.plotting import plot_decision_regions
-plt.style.use('ggplot') 
+plt.style.use('ggplot')
 
 X_combined_std = np.vstack((X_train_std, X_test_std))
 y_combined = np.hstack((y_train, y_test))
