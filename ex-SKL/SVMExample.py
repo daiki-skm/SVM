@@ -9,7 +9,7 @@ import numpy as np
 iris = datasets.load_iris()
 
 # Example 
-X = iris.data[:, [2,3]]
+X = iris.data[:, [2, 3]]
 #print('X = ', X)
 # Class Label 
 y = iris.target
@@ -43,7 +43,6 @@ model.fit(X_train_std, y_train)
 #model = LogisticRegression(random_state=None)
 
 
-
 from sklearn.metrics import accuracy_score
 
 # Acc of Model 
@@ -66,7 +65,7 @@ plt.style.use('ggplot')
 X_combined_std = np.vstack((X_train_std, X_test_std))
 y_combined = np.hstack((y_train, y_test))
 
-fig = plt.figure(figsize=(13,8))
+fig = plt.figure(figsize=(13, 8))
 plot_decision_regions(X_combined_std, y_combined, clf=model,  res=0.02)
 plt.show()
 
