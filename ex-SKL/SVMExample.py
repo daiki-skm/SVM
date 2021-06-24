@@ -71,4 +71,3 @@ y_combined = np.hstack((y_train, y_test))
 fig = plt.figure(figsize=(13, 8))
 plot_decision_regions(X_combined_std, y_combined, clf=model,  res=0.02)
 plt.show()
-
